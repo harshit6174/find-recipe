@@ -7,7 +7,7 @@ const RecipeDetails = ({ recipeId, onClose }) => {
   useEffect(() => {
     const fetchRecipeDetails = async () => {
       const response = await axios.get(
-        `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=901f5e5b671844b9836e7e20ad85a40e`
+        `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${process.env.REACT_APP_API_KEY}`
       );
       setRecipe(response.data);
     };
