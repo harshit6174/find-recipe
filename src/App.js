@@ -12,7 +12,7 @@ const App = () => {
 
   const searchRecipes = async (query) => {
     const response = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=10&apiKey=901f5e5b671844b9836e7e20ad85a40e`
+      `https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=10&apiKey=${process.env.REACT_APP_API_KEY}`
     );
     setRecipes(response.data.results);
     setSelectedRecipeId(null); 
